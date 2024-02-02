@@ -9,13 +9,15 @@ Description: This Template is created for Youtubers
 /* ===================================== Import Variables ================================== */
 @import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;500;700;800&display=swap");
 .bg-primary {
-  background-color: #ff3f3f !important;
+  background-color: #a50000 !important;
 }
 
 .text-primary {
   color: #d1e2d8 !important;
 }
-
+.bg-danger {
+  color: red !important ;
+}
 /* ===================================== Basic CSS ==================================== */
 * {
   margin: 0px;
@@ -189,7 +191,7 @@ body {
   padding: 68px;
   text-align: center;
   padding-top: 68px;
-  background-color: #eaeaea;
+  background-color: #eeeeee;
 }
 .page-nav ul {
   float: none;
@@ -447,6 +449,7 @@ body {
   font-size: 16px;
 }
 
+
 @media screen and (max-width: 767px) {
   .bordernosm {
     border: 0px !important;
@@ -503,6 +506,7 @@ body {
   padding-bottom: 30px !important;
   padding-top: 27px !important;
 }
+
 @media screen and (max-width: 767px) {
   .nacul li {
     width: 100%;
