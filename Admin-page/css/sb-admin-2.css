@@ -11734,3 +11734,29 @@ footer.sticky-footer .copyright {
 body.sidebar-toggled footer.sticky-footer {
   width: 100%;
 }
+/* form css */
+.main-form {
+  background-color: #ffffff; /* White background for the form */
+  border-radius: 10px; /* Rounded corners for the form */
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Box shadow for a subtle lift effect */
+  padding: 20px; /* Padding inside the form */
+  margin-top: 20px; /* Margin from the top */
+}
+
+label {
+  font-weight: bold; /* Make labels bold */
+}
+
+.form-control {
+  margin-bottom: 15px; /* Add some space between input fields */
+}
+
+.btn-danger {
+  background-color: #dc3545; /* Red background color for the button */
+  border-color: #dc3545; /* Red border color for the button */
+}
+
+.btn-danger:hover {
+  background-color: #c82333; /* Darker red on hover */
+  border-color: #bd2130;
+}
