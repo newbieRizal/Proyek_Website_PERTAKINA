@@ -11,11 +11,7 @@
 }
 
 .bg-primary {
-<<<<<<< HEAD:Lading-page/assets/css/style.css
   background-color: var(--primary) !important;
-=======
-  background-color: #a50000 !important;
->>>>>>> 08efd17a918f7cb50c61fb2ad200d1c22bb8535d:seo-company/assets/css/style.css
 }
 
 .text-primary {
@@ -206,12 +202,8 @@ body {
   background-size: 100%;
   padding: 40px 30px;
   text-align: center;
-<<<<<<< HEAD:Lading-page/assets/css/style.css
-  background-color: #eaeaea;
-=======
   padding-top: 68px;
   background-color: #eeeeee;
->>>>>>> 08efd17a918f7cb50c61fb2ad200d1c22bb8535d:seo-company/assets/css/style.css
 }
 .page-nav ul {
   float: none;
@@ -438,7 +430,6 @@ body {
 .btn-xs i {
   font-size: 16px;
 }
-
 
 @media screen and (max-width: 767px) {
   .bordernosm {
