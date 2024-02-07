@@ -3,7 +3,7 @@
   --indigo: #6610f2;
   --purple: #6f42c1;
   --pink: #e83e8c;
-  --red: #D92026;
+  --red: #d92026;
   --orange: #fd7e14;
   --yellow: #f6c23e;
   --green: #1cc88a;
@@ -17,7 +17,7 @@
   --success: #1cc88a;
   --info: #36b9cc;
   --warning: #f6c23e;
-  --danger: #D92026;
+  --danger: #d92026;
   --light: #f8f9fc;
   --dark: #5a5c69;
   --breakpoint-xs: 0;
@@ -3131,12 +3131,12 @@ fieldset:disabled a.btn {
 
 .btn-link {
   font-weight: 400;
-  color: #4e73df;
+  color: var(--danger);
   text-decoration: none;
 }
 
 .btn-link:hover {
-  color: #224abe;
+  color: var(--red);
   text-decoration: underline;
 }
 
@@ -5091,14 +5091,14 @@ input[type="button"].btn-block {
   padding: 0.5rem 0.75rem;
   margin-left: -1px;
   line-height: 1.25;
-  color: #4e73df;
+  color: var(--danger);
   background-color: #fff;
   border: 1px solid #dddfeb;
 }
 
 .page-link:hover {
   z-index: 2;
-  color: #224abe;
+  color: red;
   text-decoration: none;
   background-color: #eaecf4;
   border-color: #dddfeb;
@@ -5107,7 +5107,7 @@ input[type="button"].btn-block {
 .page-link:focus {
   z-index: 3;
   outline: 0;
-  box-shadow: 0 0 0 0.2rem rgba(78, 115, 223, 0.25);
+  box-shadow: 0 0 0 0.2rem var(--red);
 }
 
 .page-item:first-child .page-link {
@@ -5124,8 +5124,8 @@ input[type="button"].btn-block {
 .page-item.active .page-link {
   z-index: 3;
   color: #fff;
-  background-color: #4e73df;
-  border-color: #4e73df;
+  background-color: var(--danger);
+  border-color: var(--danger);
 }
 
 .page-item.disabled .page-link {
@@ -11759,4 +11759,10 @@ label {
 .btn-danger:hover {
   background-color: #c82333; /* Darker red on hover */
   border-color: #bd2130;
+}
+
+@media (max-width: 570px) {
+  .vidio-course {
+    width: 350px;
+  }
 }
