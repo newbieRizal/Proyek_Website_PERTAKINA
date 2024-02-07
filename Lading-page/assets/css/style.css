@@ -615,6 +615,16 @@ body {
   margin-bottom: 30px;
 }
 
+.card-vidio {
+  width: 98%;
+  margin-bottom: 30px;
+}
+
+.vidio-course {
+  height: 600px;
+  width: 98%;
+}
+
 @media screen and (max-width: 700px) {
   .card {
     width: 26rem;
