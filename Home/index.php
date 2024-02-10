@@ -171,13 +171,8 @@
                   class="w-100"
                   src="assets/images/Logo-Pertakina.png"
                   alt="" />
-                <p class="d-none d-md-block text-light text-start">
-                  PERTAKINA (Perkumpulan Tenaga Kerja Purna) adalah Organisasi
-                  Non Pemerintah yang Berbadan Hukum Perkumpulan, bergerak pada
-                  sektor Pemberdayaan Tenaga Kerja Indonesia (TKI) Purna. Area
-                  kerja utama Pertakina adalah Kabupaten dan Kota Blitar secara
-                  khusus dan Jawa Timur secara umum khususnya di wilayah
-                  basis-basis Tenaga Kerja Indonesia.
+                <p class="d-none d-md-block text-light text-justify">
+                  PERTAKINA (Perkumpulan Tenaga Kerja Purna) adalah Organisasi sektor Pemberdayaan Tenaga Kerja Indonesia (TKI) Purna. Area kerja utama Pertakina adalah Kabupaten dan Kota Blitar secara khusus dan Jawa Timur secara umum khususnya di wilayah basis-basis Tenaga Kerja Indonesia.
                 </p>
               </div>
             </div>
@@ -280,7 +275,7 @@
               Organisasi Non pemerintah yang berbadan hukum perkumpulan
             </h4>
 
-            <p class="fs-6 mb-3">
+            <p class="fs-6 mb-3 text-justify">
               <span class="text-main">PERTAKINA</span> Adalah Organisasi Non
               pemerintah yang berbadan hukum perkumpulan, bergerak pada sektor
               pemberdayaan tenaga kerja indonesia (TKI) Purna. Di rintis sejak
@@ -290,7 +285,7 @@
               mantan buruh migran, akademisi dan peneliti.
             </p>
 
-            <p class="fs-6">
+            <p class="fs-6 text-justify">
               Didirikan atas kepedulian beberapa mantan tenaga kerja Indonesia
               yang sudah purna akan nasib para mantan TKI yang banyak bermasalah
               terhadap ketahanan ekonomi keluarga pasca mereka tidak lagi
