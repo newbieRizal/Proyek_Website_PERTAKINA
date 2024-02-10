@@ -38,7 +38,11 @@
             <div class="col-lg-8 d-none d-lg-block">
               <ul class="text-white leftlist ld fs-8">
                 <li class="float-start p-2 px-3">
-                  <i class="bi bi-envelope"></i> info@lmspertakina.com
+                  <a
+                  href="mailto://lms@pertakina.org/"
+                  class="text-white">
+                  <i class="bi fs-10 bi-envelope"> info@lms.pertakina.org</i>
+                </a>
                 </li>
               </ul>
             </div>
@@ -72,7 +76,7 @@
         <div class="container-xl">
           <div class="row">
             <div class="col-lg-3">
-              <img class="py-3" src="assets/images/pertakina_berdaya.png" alt="" />
+              <img class="py-3" src="assets/images/Pertakina-footer.png" alt="" />
               <a
                 data-bs-toggle="collapse"
                 data-bs-target="#menu"
@@ -306,34 +310,19 @@
           <div class="col-md-4">
             <div class="aboutcol bg-gray fs-7 bg-dark shadow-lg p-5">
               <p class="mb-2">
-                <img src="assets/images/Logo-Pertakina.png" alt="" />
+                <img src="assets/images/Pertakina-footer.png" alt="" />
               </p>
               <p class="mb-2">
                 PERTAKINA (Perkumpulan Tenaga Kerja Purna) adalah Organisasi Non
                 Pemerintah yang Berbadan Hukum Perkumpulan, bergerak pada sektor
-                Pemberdayaan Tenaga Kerja Indonesia (TKI) Purna
+                Pemberdayaan Pekerja Migran Indonesia (TKI) Purna.
               </p>
             </div>
           </div>
           <div class="col-md-8">
             <div class="row">
-              <div class="col-md-6">
-                <div class="row">
-                  <div class="col-md-2 text-center text-primary">
-                    <i class="bi fs-1 bi-geo-alt"></i>
-                  </div>
-                  <div class="col-md-10">
-                    <h5 class="text-light fw-bolder fs-3">
-                      Blitar, Jawa Timur
-                    </h5>
-                    <p class="fs-6">Ndayu, Nglegok</p>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="row">
               <div class="col-md-6 pt-5">
-                <h4 class="fs-5 fw-bolder text-white">Useful Links</h4>
+                <h4 class="fs-5 fw-bolder text-white">Halaman Lainya</h4>
                 <ul class="row">
                   <li class="float-start col-md-6 p-2">
                     <a class="text-white fw-bolder" href="#"> Beranda</a>
@@ -369,27 +358,58 @@
                     <a
                       class="text-white fw-bolder"
                       href="https://pertakina.org/galeri-foto/">
-                      Galeri Foto dan Album</a
-                    >
+                      Galeri Foto dan Album</a>
                   </li>
                 </ul>
               </div>
-              <div class="col-md-6 pt-5">
-                <h4 class="fs-5 fw-bolder text-white">Useful Links</h4>
-
-                <p class="mb-5">
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                  Nullam justo neque, vehicula eget eros.
-                </p>
-                <ul class="text-white pt-1 float-end">
-                  <li class="float-start fs-6 p-3 py-2">
-                    <i class="bi bi-facebook"></i>
+              <div class="col-md-6 mt-5">
+                <div class="row">
+                  <div class="col-md-2 text-center text-primary">
+                    <i class="bi fs-1 bi-geo-alt"></i>
+                  </div>
+                  <div class="col-md-10">
+                    <h5 class="text-light fw-bolder fs-3">
+                      Blitar, Jawa Timur
+                    </h5>
+                    <p class="fs-6">Dusun Sanan
+                      Desa Dayu RT 03/01
+                      Kecamatan Nglegok
+                      Kabupaten Blitar 66181</p>
+                  </div>
+                </div>
+              <div class="col-large-6 pt-5 d-flex justify-content-evenly">
+                  <li class="float-start fs-8 p-3 py-2">
+                    <a
+                      href="https://www.facebook.com/pertakinaindonesia"
+                      class="text-white">
+                      <i class="bi fs-2 bi-facebook"></i>
+                    </a>
                   </li>
-                  <li class="float-start fs-6 p-3 py-2">
-                    <i class="bi bi-twitter"></i>
+                  <li class="float-start fs-8 p-3 py-2">
+                    <a href="https://twitter.com/pertakina" class="text-white">
+                      <i class="bi fs-2 bi-twitter"></i>
+                    </a>
                   </li>
-                  <li class="float-start fs-6 p-3 py-2">
-                    <i class="bi bi-instagram"></i>
+                  <li class="float-start fs-8 p-3 py-2">
+                    <a
+                      href="https://www.instagram.com/pertakinaindonesia/"
+                      class="text-white">
+                      <i class="bi fs-2 bi-instagram"></i>
+                    </a>
+                  </li>
+                  <li class="float-start fs-8 p-3 py-2">
+                    <a
+                      href="https://www.youtube.com/@pertakinatv7793"
+                      class="text-white">
+                      <i class="bi fs-2 bi-youtube"></i>
+                    </a>
+                  </li>
+                  <li class="float-start fs-8 p-3 py-2">
+                    <a
+                      href="mailto://lms@pertakina.org/"
+                      class="text-white">
+                      <i class="bi fs-2 bi-envelope"></i>
+                    </a>
                   </li>
                 </ul>
               </div>
@@ -401,14 +421,6 @@
     <div class="copy">
       <div class="container">
         <p class="text-center">2024 &copy; E-Learing Pertakina LSM | PERTAKINA DEV</p>
-        <span>
-          <a href="https://twitter.com/pertakina"
-            ><i class="fab fa-twitter"></i
-          ></a>
-          <a href="https://www.facebook.com/pertakinaindonesia"
-            ><i class="fab fa-facebook-f"></i
-          ></a>
-        </span>
       </div>
     </div>
   </body>
