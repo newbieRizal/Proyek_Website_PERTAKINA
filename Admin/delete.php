@@ -1,18 +1,19 @@
 <?php
-// Ambil ID video yang dipilih dari parameter URL
+include "../config/database/database.php";
+// Pastikan ada parameter ID yang diterima
 if(isset($_GET['id'])) {
+    // Ambil ID video yang dipilih dari parameter URL
     $id_video = $_GET['id']; 
-    // Lakukan query untuk mendapatkan data video berdasarkan ID
-    $sql = "SELECT vidio.*, kategori.nama_kategori FROM vidio JOIN kategori ON kategori.id_kategori = vidio.id_vidio";
-    $result = $connect->query($sql);
-    if($result->num_rows > 0) {
-        // Ambil data video
-        $row = $result->fetch_assoc();
-        $url_video = $row['url_vidio'];
-        $judul_video = $row['judul_vidio'];
-        $kategori_video = $row['nama_kategori'];
-        $durasi_video = $row['durasi_vidio'];
-        $sinopsis_video = $row['sinopsis_vidio'];
-        $deskripsi_video = $row['deskripsi_vidio'];
+
+    // Lakukan query untuk menghapus data video berdasarkan ID
+    $sql = "DELETE FROM `vidio` WHERE id_vidio = '$id_video'";
+    
+    // Eksekusi query
+    if ($connect->query($sql) === TRUE) {
+        echo "<script>alert('Data berhasil dihapus.');</script>";
+        header("index.php");
+    } else {
+        echo "<script>alert('Terjadi kesalahan: " . $connect->error . "');</script>";
     }
 }
+?>

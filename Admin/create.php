@@ -19,7 +19,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $sinopsis_video = $_POST['sinopsis_video'];
     $deskripsi_video = $_POST['deskripsi_video'];
     $img_thumbnail = $_POST['img_thumbnail'];
-    
+
       // Buat pernyataan SQL untuk video
       $sql = "INSERT INTO vidio (url_vidio, judul_vidio, durasi_vidio, sinopsis_vidio, deskripsi_vidio, img_thumbnail)
       VALUES ('$url_video', '$judul_video', '$durasi_video', '$sinopsis_video', '$deskripsi_video', '$img_thumbnail')";
@@ -60,9 +60,12 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         </div>
       </div>
       <div class="row">
-        <div class="col-12 col-md-6">
-          <label for="kategori_video" class="form-label">KATEGORI VIDEO</label>
-          <input type="text" class="form-control" id="kategori_video" name="kategori_video" value="<?php echo isset($kategori_video) ? $kategori_video : ''; ?>" />
+        <div class="col-12 col-md-6 mt-2">
+          <select class="form-control selectpicker" name="kategori_video" id="kategori_video">
+            <option value="Bahasa Inggris">Bahasa Inggris</option>
+            <option value="Bahasa Jepang">Bahasa Jepang</option>
+            <option value="Bahasa Korea">Bahasa Korea</option>
+        </select>
         </div>
         <div class="col-12 col-md-6">
           <label for="durasi_video" class="form-label">DURASI VIDEO</label>

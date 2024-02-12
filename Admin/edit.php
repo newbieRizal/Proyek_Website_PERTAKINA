@@ -1,6 +1,9 @@
 <?php require "include/head.php"; ?>
 <?php require "include/nav.php"; ?>
-
+<?php
+// Tampilkan isi dari $_POST
+var_dump($_POST);
+?>
 <!-- Begin Page Content -->
 <?php
 // Ambil ID video yang dipilih dari parameter URL
@@ -19,12 +22,13 @@ if(isset($_GET['id'])) {
         $sinopsis_video = $row['sinopsis_vidio'];
         $deskripsi_video = $row['deskripsi_vidio'];
     }
+    $kategori_options = array('Bahasa Inggris', 'Bahasa Jepang', 'Bahasa Korea');
 }
 
 // Proses update data ketika formulir disubmit
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
   // Pastikan semua input telah diisi dengan benar sebelum memproses
-  if (!empty($_POST['url_video']) && !empty($_POST['judul_video']) && !empty($_POST['kategori_video']) && !empty($_POST['durasi_video']) && !empty($_POST['sinopsis_video']) && !empty($_POST['deskripsi_video']) && !empty($_POST['img_thumbnail'])) {
+  if (!empty($_POST['url_video']) && !empty($_POST['judul_video']) && !empty($_POST['kategori_video']) && !empty($_POST['durasi_video']) && !empty($_POST['sinopsis_video']) && !empty($_POST['deskripsi_video'])) {
     // Tangkap data dari form
     $url_video = $_POST['url_video'];
     $judul_video = $_POST['judul_video'];
@@ -34,26 +38,55 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $deskripsi_video = $_POST['deskripsi_video'];
     $img_thumbnail = $_POST['img_thumbnail'];
 
-    // Lakukan query untuk memperbarui data di database
-    $sql = "UPDATE vidio 
-            INNER JOIN kategori ON vidio.id_vidio = kategori.id_kategori
-            SET vidio.url_vidio='$url_video', 
-                vidio.judul_vidio='$judul_video', 
-                kategori.nama_kategori='$kategori_video', 
-                vidio.durasi_vidio='$durasi_video', 
-                vidio.sinopsis_vidio='$sinopsis_video', 
-                vidio.deskripsi_vidio='$deskripsi_video',
-                vidio.img_thumbnail='$img_thumbnail' 
-            WHERE vidio.id_vidio=$id_video";
 
-      if ($connect->query($sql) === TRUE) {
-        echo "<script>alert('Data berhasil diperbarui.');</script>";
-      } else {
-        echo "<script>alert('Terjadi kesalahan: ');</script>" . $connect->error;
-      }
-      } else {
-        echo "<script>alert('Semua Kolom harus diisi: ');</script>" . $connect->error;
-      }
+    // jek salah yo boss
+    // struktrur e database sek kleru
+    // Pertama, jalankan pernyataan ALTER TABLE untuk mengubah tipe data kolom
+    $alter_query = "ALTER TABLE kategori MODIFY COLUMN nama_kategori ENUM('Bahasa Inggris', 'Bahasa Jepang', 'Bahasa Korea')";
+    if ($connect->query($alter_query) === TRUE) {
+        // Jika pernyataan ALTER TABLE berhasil dijalankan, lanjutkan dengan pernyataan UPDATE
+        $update_query = "UPDATE vidio 
+                        INNER JOIN kategori ON vidio.id_vidio = kategori.id_kategori
+                        SET vidio.url_vidio='$url_video', 
+                            vidio.judul_vidio='$judul_video', 
+                            kategori.nama_kategori='$kategori_video', 
+                            vidio.durasi_vidio='$durasi_video', 
+                            vidio.sinopsis_vidio='$sinopsis_video', 
+                            vidio.deskripsi_vidio='$deskripsi_video',
+                            vidio.img_thumbnail='$img_thumbnail' 
+                        WHERE vidio.id_vidio=$id_video";
+        
+        if ($connect->query($update_query) === TRUE) {
+          "<script>alert('Data berhasil diperbarui.');</script>";
+        } else {
+            echo "<script>alert('Terjadi kesalahan: ');</script>" . $update_query . "<br>" . $mysqli->error;
+        }
+    } else {
+      echo "<script>alert('Semua Kolom harus diisi: ');</script>" . $alter_query . "<br>" . $mysqli->error;
+    }
+  }
+
+    // Lakukan query untuk memperbarui data di database
+    // $sql = "UPDATE vidio 
+    //         INNER JOIN kategori ON vidio.id_vidio = kategori.id_kategori
+    //         SET vidio.url_vidio='$url_video', 
+    //             vidio.judul_vidio='$judul_video', 
+    //             kategori.nama_kategori='$kategori_video', 
+    //             vidio.durasi_vidio='$durasi_video', 
+    //             vidio.sinopsis_vidio='$sinopsis_video', 
+    //             vidio.deskripsi_vidio='$deskripsi_video',
+    //             vidio.img_thumbnail='$img_thumbnail' 
+    //         WHERE vidio.id_vidio=$id_video
+    //         AND ALTER TABLE kategori MODIFY COLUMN nama_kategori ENUM('Bahasa Inggris', 'Bahasa Jepang', 'Bahasa Korea')";
+
+    //   if ($connect->query($sql) === TRUE) {
+    //     echo "<script>alert('Data berhasil diperbarui.');</script>";
+    //   } else {
+    //     echo "<script>alert('Terjadi kesalahan: ');</script>" . $connect->error;
+    //   }
+    //   } else {
+    //     echo "<script>alert('Semua Kolom harus diisi: ');</script>" . $connect->error;
+    //   }
 }
 ?>
 <div class="container-fluid pb-4">
@@ -74,8 +107,16 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
       </div>
       <div class="row">
         <div class="col-12 col-md-6">
-          <label for="kategori_video" class="form-label">KATEGORI VIDEO</label>
-          <input type="text" class="form-control" id="kategori_video" name="kategori_video" value="<?php echo isset($kategori_video) ? $kategori_video : ''; ?>" />
+        <label for="kategori_video">Pilih Kategori Video:</label>
+        <select class="form-control selectpicker" name="kategori_video" id="kategori_video">
+        <?php
+          // Loop melalui opsi dan tandai yang dipilih sesuai dengan nilai yang diambil dari database
+          foreach ($kategori_options as $option) {
+              $selected = ($option == $kategori_video) ? 'selected' : '';
+              echo "<option value=\"$option\" $selected>$option</option>";
+          }
+          ?>
+        </select>
         </div>
         <div class="col-12 col-md-6">
           <label for="durasi_video" class="form-label">DURASI VIDEO</label>
