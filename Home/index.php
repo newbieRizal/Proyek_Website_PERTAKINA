@@ -87,7 +87,7 @@
             <div id="menu" class="col-lg-9 d-none d-lg-block">
               <ul class="fw-bold float-end nacul fs-7">
                 <li class="float-start active p-1 px-5">
-                  <a href="index.html"> BERANDA </a>
+                  <a href="index.php"> BERANDA </a>
                 </li>
                 <li class="float-start p-1 px-5">
                   <a href="Course.html">LEARNING COURSE</a>
@@ -139,7 +139,7 @@
                 </h2>
                 <img
                   class="w-50"
-                  src="assets/images/logo_pertakina.png"
+                  src="assets/images/Logo Pertakina Indonesia.jpeg"
                   alt="" />
                 <p class="d-none d-md-block text-light text-center px-4 fs-5">
                   PERTAKINA (Perkumpulan Tenaga Kerja Purna) adalah Organisasi
@@ -173,7 +173,7 @@
                 class="col-lg-6 align-self-center d-none d-lg-block animate__animated animate__backInUp">
                 <img
                   class="w-100"
-                  src="assets/images/Logo-Pertakina.png"
+                  src="assets/images/Pertakina-footer.png"
                   alt="" />
                 <p class="d-none d-md-block text-light text-justify">
                   PERTAKINA (Perkumpulan Tenaga Kerja Purna) adalah Organisasi sektor Pemberdayaan Tenaga Kerja Indonesia (TKI) Purna. Area kerja utama Pertakina adalah Kabupaten dan Kota Blitar secara khusus dan Jawa Timur secara umum khususnya di wilayah basis-basis Tenaga Kerja Indonesia.
@@ -420,7 +420,7 @@
     </footer>
     <div class="copy">
       <div class="container">
-        <p class="text-center">2024 &copy; E-Learing Pertakina LSM | PERTAKINA DEV</p>
+        <p class="text-center">PERTAKINA INDONESIA | Perkumpulan Keluarga TKI dan TKI Purna Copyright © 2024.Developed by Pertakina Dev. All Rights Reserved.</p>
       </div>
     </div>
   </body>
