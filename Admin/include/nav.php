@@ -188,3 +188,6 @@
             </ul>
           </nav>
           <!-- End of Topbar -->
+
+          <!-- database connect -->
+          <?php include "../config/database/database.php"; ?>
