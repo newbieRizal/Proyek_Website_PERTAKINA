@@ -49,13 +49,27 @@
                 Kategori Bahasa
               </div>
               <div class="h5 mb-0 font-weight-bold text-gray-800">
-                <?php
-                // Hitung jumlah vidio
-                $sql_count = "SELECT COUNT(*) AS total_kategori FROM kategori";
-                $result_count = $connect->query($sql_count);
-                $row_count = $result_count->fetch_assoc();
-                echo $row_count['total_kategori'];
-                ?>
+              <?php
+    $sql_count = "SELECT 
+                        COUNT(*) AS total_kategori,
+                        kategori_video
+                    FROM 
+                        vidio
+                    WHERE 
+                        kategori_video IN ('bahasa inggris', 'bahasa jepang', 'bahasa korea')
+                    GROUP BY 
+                        kategori_video;";
+    $result_count = $connect->query($sql_count);
+
+    $total_kategori = 0;
+
+    while($row_count = $result_count->fetch_assoc()) {
+        $total_kategori += $row_count['total_kategori'];
+    }
+
+    echo $total_kategori;
+?>
+
               </div>
             </div>
             <div class="col-auto">
@@ -148,7 +162,7 @@
                 <tbody>
                   <?php
                   // Query untuk mengambil data dari database
-                  $sql = "SELECT vidio.*, kategori.nama_kategori FROM vidio JOIN kategori ON kategori.id_kategori = vidio.id_vidio";
+                  $sql = "SELECT * FROM vidio";
                   $result = $connect->query($sql);
                   // Periksa apakah ada hasil yang ditemukan
                   if ($result->num_rows > 0) {
@@ -158,7 +172,7 @@
                       echo "<td>" . $row['id_vidio'] . "</td>";
                       echo "<td>" . $row['url_vidio'] . "</td>";
                       echo "<td>" . $row['judul_vidio'] . "</td>";
-                      echo "<td>" . $row['nama_kategori'] . "</td>";
+                      echo "<td>" . $row['kategori_video'] . "</td>";
                       echo "<td>" . $row['durasi_vidio'] . "</td>";
                       echo "<td>" . $row['sinopsis_vidio'] . "</td>";
                       echo "<td>" . $row['deskripsi_vidio'] . "</td>";
