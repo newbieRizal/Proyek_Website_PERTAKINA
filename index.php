@@ -1,7 +1,7 @@
 <?php
     $tujuanabangkuh="Home";
 
-    header("Location: ./$tujuanabangkuh/index.php");
+    header("Location: ./$tujuanabangkuh/");
 
     exit;
 

@@ -3,6 +3,7 @@
           <div class="container my-auto">
             <div class="copyright text-center my-auto">
               <span>Copyright &copy; Pertakina Bedaya 2024</span>
+              <span>Support &copy; Pertakina Developer</span>
             </div>
           </div>
         </footer>
