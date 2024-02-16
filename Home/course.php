@@ -1,4 +1,23 @@
+<!--Header -->
 <?php include "./include/header.php" ?>
+<?php include "./include/pageTitle.php" ?>
+    <!--  ************************* Page Title Starts Here ************************** -->
+    <!-- Main Container-->
+    <div class="container py-5 my-2 mb-5">
+      <div class="row">
+        <div class="col-12 col-xl-6 pb-4">
+          <div class="card shadow-md" style="width: 23rem">
+            <div class="card-body">
+              <img
+                class="icon-search"
+                src="assets/images/pertakina_berdaya.png"
+                alt="" />
+              <input
+                class="form-control"
+                type="text"
+                placeholder="Search"
+                aria-label="Search" />
+=======
 <!-- And Header -->
 
 <!--  ************************* Page Title Starts Here ************************** -->
@@ -46,7 +65,6 @@
     <?php
     $sql_video = "SELECT * FROM vidio LIMIT 5"; // Hanya mengambil lima baris pertama
     $result_video = $connect->query($sql_video);
-
     if ($result_video->num_rows > 0) {
       while ($row = $result_video->fetch_assoc()) {
         $url_video = $row['url_vidio'];

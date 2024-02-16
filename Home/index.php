@@ -1,6 +1,4 @@
 <?php include "./include/header.php"?>
-  
-
     <!-- ##################### Slider Starts Here #################### -->
 
     <div
@@ -31,14 +29,14 @@
             <div class="row">
               <div
                 class="align-self-center animate__animated animate__backInLeft">
-                <h2 class="fs-12 fw-bolder text-center text-white">
+                <h2 class="fs-12 fw-bolder text-center text-white header-carausel">
                   Organisasi <span class="text-main">Pertakina.</span>
                 </h2>
                 <img
-                  class="w-50"
+                  class="home-img py-4"
                   src="assets/images/Logo Pertakina Indonesia.jpeg"
                   alt="" />
-                <p class="d-none d-md-block text-light text-center px-4 fs-5">
+                <p class="d-none d-md-block text-light text-center px-4 fs-5 text-carausel">
                   PERTAKINA (Perkumpulan Tenaga Kerja Purna) adalah Organisasi
                   Non Pemerintah yang Berbadan Hukum Perkumpulan, bergerak pada
                   sektor Pemberdayaan Tenaga Kerja Indonesia (TKI) Purna
@@ -116,10 +114,10 @@
               <img class="mb-4" src="assets/images/Inggris.png" alt="" style="width: 500px;" />
               <h4 class="text=primarybolder mb-3 fw-bolder">Bahasa Inggris</h4>
               <p class="mb-3 fs-6">
-                Internet marketing SEO company offering innovativ marketing
+              Pembelajaran bahasa Inggris adalah proses di mana individu memperoleh keterampilan dalam berkomunikasi, membaca, menulis, dan memahami bahasa Inggris.
               </p>
               <button class="btn btn-primary">
-                <a href="Course.html" class="text-white">Lihat Selengkapnya</a>
+                <a href="course.php" class="text-white">Lihat Selengkapnya</a>
               </button>
             </div>
           </div>
@@ -128,10 +126,10 @@
               <img class="mb-4" src="assets/images/jepang.png" alt="" style="width: 1000px;"/>
               <h4 class="text=primarybolder mb-3 fw-bolder">Bahasa Jepang</h4>
               <p class="mb-3 fs-6">
-                Internet marketing SEO company offering innovativ marketing
+              Pembelajaran bahasa Jepang adalah proses di mana individu memperoleh keterampilan dalam berkomunikasi, membaca, menulis, dan memahami bahasa Jepang.
               </p>
               <button class="btn btn-primary">
-                <a href="Course.html" class="text-white">Lihat Selengkapnya</a>
+                <a href="course.php" class="text-white">Lihat Selengkapnya</a>
               </button>
             </div>
           </div>
@@ -140,10 +138,9 @@
               <img class="mb-4" src="assets/images/korea.png" alt="" />
               <h4 class="text=primarybolder mb-3 fw-bolder">Bahasa Korea</h4>
               <p class="mb-3 fs-6">
-                Internet marketing SEO company offering innovativ marketing
-              </p>
+              Pembelajaran bahasa Jepang adalah proses di mana individu memperoleh keterampilan dalam berkomunikasi, membaca, menulis, dan memahami bahasa Jepang.
               <button class="btn btn-primary">
-                <a href="Course.html" class="text-white">Lihat Selengkapnya</a>
+                <a href="course.php" class="text-white">Lihat Selengkapnya</a>
               </button>
             </div>
           </div>

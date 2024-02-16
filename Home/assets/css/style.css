@@ -311,6 +311,20 @@ body {
   max-width: 1170px;
 }
 
+@media screen and (max-width: 1024px) {
+  .container {
+    margin: auto;
+    padding: auto;
+  }
+}
+
+@media screen and (max-width: 1200px) {
+  .header-carausel {
+    font-size: 20px;
+  }
+}
+
+
 @media screen and (max-width: 575px) {
   .container {
     padding: 10px 15px;
@@ -331,6 +345,24 @@ body {
   font-weight: 600;
 }
 
+.home-img{
+  width: 350px;
+}
+
+@media screen and (max-width: 1200px) {
+  .home-img {
+    width: 240px;
+  }  
+}
+
+@media screen and (max-width: 1000px) {
+  .home-img {
+    display: none;
+  }
+}
+
+
+
 .fw-sm {
   font-weight: 500;
 }
@@ -338,6 +370,7 @@ body {
 .big-padding {
   padding: 50px;
 }
+
 @media screen and (max-width: 940px) {
   .big-padding {
     padding: 30px 10px;
@@ -355,6 +388,7 @@ body {
 .fs-11 {
   font-size: 4rem;
 }
+
 @media screen and (max-width: 767px) {
   .fs-11 {
     font-size: 2rem;
@@ -453,10 +487,15 @@ body {
   font-size: 0.79rem;
 }
 
-.fs-55 {
+.fs-5 {
   font-size: 1.1rem;
 }
 
+@media screen and (max-width: 1010px) {
+  .fs-5 {
+    font-size: 0.5rem;
+  }
+}
 .mt-25 {
   margin-top: 11px;
 }
@@ -502,6 +541,21 @@ body {
 .fs-12 {
   font-size: 4.5rem;
 }
+
+@media screen and (max-width: 1200px) {
+  .fs-12 {
+    font-size: 3.5rem;
+    padding-top: 2px;
+  }
+}
+
+
+@media screen and (max-width: 767px) {
+  .fs-12 {
+    font-size: 2.38rem;
+  }
+}
+
 
 .carousel-caption {
   right: 10%;
@@ -577,7 +631,7 @@ body {
   margin-right: 10rem;
 }
 
-/* Card Couse */
+/* Card Course */
 .category {
   color: var(--primary);
   padding: 5px 0;
@@ -625,16 +679,23 @@ body {
   width: 98%;
 }
 
-@media screen and (max-width: 700px) {
+@media screen and (max-width: 750px) {
   .card {
-    width: 26rem;
+    width: 23rem;
     object-fit: fill;
     border-bottom-left-radius: 0px;
     margin-bottom: 30px;
   }
 
   .vidio-course {
-    width: 400px;
+    width: 21rem;
+    height: 15rem;
+    padding: 2px 3px;
+  }
+
+  .footer-responsive {
+    display: inline-block;
+    justify-content: center;
   }
 }
 
@@ -642,3 +703,6 @@ body {
   border-radius: 12px;
   margin: 5px 8px;
 }
+
+
+
