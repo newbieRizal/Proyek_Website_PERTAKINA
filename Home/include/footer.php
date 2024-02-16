@@ -4,10 +4,10 @@
   <div class="row">
     <div class="col-md-4">
       <div class="aboutcol fs-7 p-5">
-        <p class="mb-2">
+        <p class="mb-2 d-flex justify-content-center">
           <img src="assets/images/Pertakina-footer.png" alt="" />
         </p>
-        <p class="mb-2">
+        <p class="mb-2 d-flex">
           PERTAKINA (Perkumpulan Tenaga Kerja Purna) adalah Organisasi Non
           Pemerintah yang Berbadan Hukum Perkumpulan, bergerak pada sektor
           Pemberdayaan Pekerja Migran Indonesia (TKI) Purna.
@@ -16,7 +16,7 @@
     </div>
     <div class="col-md-8">
       <div class="row">
-        <div class="col-md-6 pt-5">
+        <div class="col-md-6 pt-5 footer-responsive">
           <h4 class="fs-5 fw-bolder text-white">Halaman Lainya</h4>
           <ul class="row">
             <li class="float-start col-md-6 p-2">
@@ -72,7 +72,7 @@
                 Kabupaten Blitar 66181</p>
             </div>
           </div>
-        <div class="col-large-6 pt-5 d-flex justify-content-evenly">
+        <div class="col-large-6 pt-5 d-flex justify-content-evenly mb-3">
             <li class="float-start fs-8 p-3 py-2">
               <a
                 href="https://www.facebook.com/pertakinaindonesia"
