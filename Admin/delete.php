@@ -10,10 +10,10 @@ if(isset($_GET['id'])) {
     
     // Eksekusi query
     if ($connect->query($sql) === TRUE) {
-        echo "<script>alert('Data berhasil dihapus.');</script>";
-        header("index.php");
+        echo "<script>alert('Data berhasil dihapus.'); window.location.href='index.php';</script>";
+        exit(); // Pastikan untuk keluar setelah melakukan redirect
     } else {
         echo "<script>alert('Terjadi kesalahan: " . $connect->error . "');</script>";
-    }
+    }    
 }
 ?>

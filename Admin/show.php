@@ -10,11 +10,7 @@
             if(isset($_GET['id'])) {
                 $id_video = $_GET['id']; // Ambil ID video dari parameter URL
                 // $sql_video = "SELECT * FROM vidio WHERE id_vidio = $id_video";
-                $sql_video = "SELECT vidio.*, kategori.nama_kategori 
-                FROM vidio 
-                JOIN kategori ON kategori.id_kategori = vidio.id_vidio
-                WHERE vidio.id_vidio = $id_video;
-                ";
+                $sql_video = "SELECT * FROM vidio WHERE id_vidio = $id_video";
                 $result_video = $connect->query($sql_video);
                 if ($result_video->num_rows > 0) {
                     $row_video = $result_video->fetch_assoc();
@@ -34,7 +30,7 @@
             <div class="col-12 col-md-6">
                 <div class="card shadow">
                     <div class="card-body">
-                        <p class="text-danger fw-bold"><?php echo $row_video['nama_kategori']; ?></p>
+                        <p class="text-danger fw-bold"><?php echo $row_video['kategori_video']; ?></p>
                         <h4><?php echo $row_video['judul_vidio']; ?></h4>
                         <div style="background-color: grey" class="py-1 my-3">
                             <p style="color: #fff" class="fs-5 text-center">

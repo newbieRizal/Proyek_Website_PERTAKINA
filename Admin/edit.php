@@ -10,14 +10,14 @@ var_dump($_POST);
 if(isset($_GET['id'])) {
     $id_video = $_GET['id']; 
     // Lakukan query untuk mendapatkan data video berdasarkan ID
-    $sql = "SELECT vidio.*, kategori.nama_kategori FROM vidio JOIN kategori ON kategori.id_kategori = vidio.id_vidio";
+    $sql = "SELECT * FROM vidio WHERE id_vidio = $id_video";
     $result = $connect->query($sql);
     if($result->num_rows > 0) {
         // Ambil data video
         $row = $result->fetch_assoc();
         $url_video = $row['url_vidio'];
         $judul_video = $row['judul_vidio'];
-        $kategori_video = $row['nama_kategori'];
+        $kategori_video = $row['kategori_video'];
         $durasi_video = $row['durasi_vidio'];
         $sinopsis_video = $row['sinopsis_vidio'];
         $deskripsi_video = $row['deskripsi_vidio'];
@@ -42,51 +42,25 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     // jek salah yo boss
     // struktrur e database sek kleru
     // Pertama, jalankan pernyataan ALTER TABLE untuk mengubah tipe data kolom
-    $alter_query = "ALTER TABLE kategori MODIFY COLUMN nama_kategori ENUM('Bahasa Inggris', 'Bahasa Jepang', 'Bahasa Korea')";
-    if ($connect->query($alter_query) === TRUE) {
-        // Jika pernyataan ALTER TABLE berhasil dijalankan, lanjutkan dengan pernyataan UPDATE
-        $update_query = "UPDATE vidio 
-                        INNER JOIN kategori ON vidio.id_vidio = kategori.id_kategori
-                        SET vidio.url_vidio='$url_video', 
-                            vidio.judul_vidio='$judul_video', 
-                            kategori.nama_kategori='$kategori_video', 
-                            vidio.durasi_vidio='$durasi_video', 
-                            vidio.sinopsis_vidio='$sinopsis_video', 
-                            vidio.deskripsi_vidio='$deskripsi_video',
-                            vidio.img_thumbnail='$img_thumbnail' 
-                        WHERE vidio.id_vidio=$id_video";
-        
-        if ($connect->query($update_query) === TRUE) {
-          "<script>alert('Data berhasil diperbarui.');</script>";
-        } else {
-            echo "<script>alert('Terjadi kesalahan: ');</script>" . $update_query . "<br>" . $mysqli->error;
-        }
-    } else {
-      echo "<script>alert('Semua Kolom harus diisi: ');</script>" . $alter_query . "<br>" . $mysqli->error;
-    }
-  }
-
     // Lakukan query untuk memperbarui data di database
-    // $sql = "UPDATE vidio 
-    //         INNER JOIN kategori ON vidio.id_vidio = kategori.id_kategori
-    //         SET vidio.url_vidio='$url_video', 
-    //             vidio.judul_vidio='$judul_video', 
-    //             kategori.nama_kategori='$kategori_video', 
-    //             vidio.durasi_vidio='$durasi_video', 
-    //             vidio.sinopsis_vidio='$sinopsis_video', 
-    //             vidio.deskripsi_vidio='$deskripsi_video',
-    //             vidio.img_thumbnail='$img_thumbnail' 
-    //         WHERE vidio.id_vidio=$id_video
-    //         AND ALTER TABLE kategori MODIFY COLUMN nama_kategori ENUM('Bahasa Inggris', 'Bahasa Jepang', 'Bahasa Korea')";
+    $sql = "UPDATE vidio 
+            SET vidio.url_vidio='$url_video', 
+                vidio.judul_vidio='$judul_video', 
+                vidio.kategori_video='$kategori_video', 
+                vidio.durasi_vidio='$durasi_video', 
+                vidio.sinopsis_vidio='$sinopsis_video', 
+                vidio.deskripsi_vidio='$deskripsi_video',
+                vidio.img_thumbnail='$img_thumbnail' 
+            WHERE vidio.id_vidio=$id_video";
 
-    //   if ($connect->query($sql) === TRUE) {
-    //     echo "<script>alert('Data berhasil diperbarui.');</script>";
-    //   } else {
-    //     echo "<script>alert('Terjadi kesalahan: ');</script>" . $connect->error;
-    //   }
-    //   } else {
-    //     echo "<script>alert('Semua Kolom harus diisi: ');</script>" . $connect->error;
-    //   }
+      if ($connect->query($sql) === TRUE) {
+        echo "<script>alert('Data berhasil diperbarui.');</script>";
+      } else {
+        echo "<script>alert('Terjadi kesalahan: ');</script>" . $connect->error;
+      }
+      } else {
+        echo "<script>alert('Semua Kolom harus diisi: ');</script>" . $connect->error;
+  }
 }
 ?>
 <div class="container-fluid pb-4">
@@ -154,58 +128,4 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
 <!-- End of Main Content -->
 
-<!-- Footer -->
-<footer class="sticky-footer bg-white">
-  <div class="container my-auto">
-    <div class="copyright text-center my-auto">
-      <span>Copyright &copy; Pertakina Bedaya 2024</span>
-    </div>
-  </div>
-</footer>
-<!-- End of Footer -->
-</div>
-<!-- End of Content Wrapper -->
-</div>
-<!-- End of Page Wrapper -->
-
-<!-- Scroll to Top Button-->
-<a class="scroll-to-top rounded" href="#page-top">
-  <i class="fas fa-angle-up"></i>
-</a>
-
-<!-- Logout Modal-->
-<!-- Logout Modal-->
-<div class="modal fade" id="logoutModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-  <div class="modal-dialog" role="document">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLabel">
-          Anda yakin ingin Keluar?
-        </h5>
-        <button class="close" type="button" data-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true">×</span>
-        </button>
-      </div>
-      <div class="modal-body">Anda Ingin Keluar.</div>
-      <div class="modal-footer">
-        <button class="btn btn-secondary" type="button" data-dismiss="modal">
-          Batal
-        </button>
-        <a class="btn btn-danger" href="login.html">Keluar</a>
-      </div>
-    </div>
-  </div>
-</div>
-<!-- Bootstrap core JavaScript-->
-<script src="vendor/jquery/jquery.min.js"></script>
-<script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-
-<!-- Core plugin JavaScript-->
-<script src="vendor/jquery-easing/jquery.easing.min.js"></script>
-
-<!-- Custom scripts for all pages-->
-<script src="js/sb-admin-2.min.js"></script>
-<script src="js/demo/datatables-demo.js"></script>
-</body>
-
-</html>
+<?php include "include/footer.php"; ?>

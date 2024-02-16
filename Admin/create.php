@@ -21,26 +21,18 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $img_thumbnail = $_POST['img_thumbnail'];
 
       // Buat pernyataan SQL untuk video
-      $sql = "INSERT INTO vidio (url_vidio, judul_vidio, durasi_vidio, sinopsis_vidio, deskripsi_vidio, img_thumbnail)
-      VALUES ('$url_video', '$judul_video', '$durasi_video', '$sinopsis_video', '$deskripsi_video', '$img_thumbnail')";
+      $sql = "INSERT INTO vidio (url_vidio, judul_vidio, durasi_vidio, sinopsis_vidio, deskripsi_vidio, img_thumbnail, kategori_video)
+      VALUES ('$url_video', '$judul_video', '$durasi_video', '$sinopsis_video', '$deskripsi_video', '$img_thumbnail', '$kategori_video')";
   
   // Eksekusi pernyataan SQL untuk video
   if ($connect->query($sql) === TRUE) {
-      // Buat pernyataan SQL untuk kategori
-      $sql_1 = "INSERT INTO kategori (nama_kategori) VALUES ('$kategori_video')";
-      
-      // Eksekusi pernyataan SQL untuk kategori
-      if ($connect->query($sql_1) === TRUE) {
-          echo "<script>alert('Data berhasil ditambah.');</script>";
-      } else {
-          echo "<script>alert('Terjadi kesalahan: " . $connect->error . "');</script>";
-      }
+    echo "<script>alert('Data berhasil dibuat.'); window.location.href='index.php';</script>";
   } else {
-      echo "<script>alert('Terjadi kesalahan: " . $connect->error . "');</script>";
+      echo "<script>alert('Terjadi kesalahan: ');</script>" . $update_query . "<br>" . $mysqli->error;
   }
-} else {
-  echo "<script>alert('Semua Kolom harus diisi.');</script>";
-}
+  }else {
+  echo "<script>alert('Semua Kolom harus diisi: ');</script>" . $alter_query . "<br>" . $mysqli->error;
+  }
 }
 ?>
 <div class="container-fluid pb-4">
